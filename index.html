@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Libro - Lettura Vocale</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+      background: #fdfdfd;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Instruzioni</h1>
+  <p id="text">
+    Benvenuti nel libro ‘’Costruire la Routine Scolastica’’!
+
+Questo speciale libro è stato progettato per stimolare la curiosità e la creatività dei più piccoli, offrendo loro la possibilità di esplorare e organizzare le giornate scolastiche e le attività in modo interattivo e coinvolgente.
+
+Ogni card è stata realizzata con attenzione utilizzando immagini chiare e font ad alta leggibilità per favorire un apprendimento visivo e pratico, al fine di aiutare i bambini a familiarizzare con le materie scolastiche, a memorizzare gli impegni, a pianificare le giornate in maniera autonoma e ad imparare ad orientarsi sempre meglio nel tempo.
+Con la speranza che questo libro diventi un compagno essenziale nel loro viaggio educativo, incoraggiando capacità di organizzazione e sete di conoscenza, auguro a tutti voi  buon divertimento e buon apprendimento!
+
+  </p>
+  <button onclick="readText()">Leggi il Testo</button>
+
+  <script>
+    function readText() {
+      const synth = window.speechSynthesis;
+      const utter = new SpeechSynthesisUtterance(document.getElementById("text").innerText);
+      utter.lang = "it-IT";
+      synth.speak(utter);
+    }
+  </script>
+</body>
+</html>
